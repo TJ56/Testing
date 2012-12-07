@@ -1,0 +1,13 @@
+SRCS:=$(shell ls *.cpp)
+OBJS:=$(SRCS:.cpp=.o)
+CFLAGS+=-Wall -ggdb
+CXXFLAGS=$(CFLAGS)
+APP:=de
+all: $(APP)
+	
+$(APP): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(APP) $(OBJS)
+dep:
+	echo "Do nothing"
+clean:
+	rm -f $(APP) *.o 
